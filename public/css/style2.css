@@ -1,0 +1,520 @@
+/* Общие настройки */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f1f1f1;
+}
+
+/* Сброс стилей */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+html {
+  width: 100%;
+  height: 100%;
+}
+
+/* Блок Wither */
+.wither {
+  background-image: url('https://steamuserimages-a.akamaihd.net/ugc/775117696994422297/9F51C49B23A23725944F26F5F060CD14A6E74B1C/?imw=512&amp;imh=288&amp;ima=fit&amp;impolicy=Letterbox&amp;imcolor=%23000000&amp;letterbox=true');
+  background-size: cover;
+  background-position: center;
+  padding: 20px;
+}
+
+/* Кнопки слайдера */
+.slidebut,
+.slidebut2 {
+  margin-top: 20px;
+  margin-left: 28px;
+  color: white;
+  background-color: transparent;
+  border-radius: 10%;
+}
+
+/* Карточки игр */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 380px;
+  width: 400px;
+  background-color: #17141d;
+  border-radius: 10px;
+  box-shadow: -1rem 0 3rem #000;
+  transition: transform 0.4s ease-out;
+  position: relative;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-20px);
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.title {
+  color: white;
+  font-weight: 300;
+  position: absolute;
+  left: 20px;
+  top: 15px;
+}
+
+.bar {
+  position: absolute;
+  top: 100px;
+  left: 20px;
+  height: 5px;
+  width: 150px;
+}
+
+.emptybar {
+  background-color: #2e3033;
+  width: 100%;
+  height: 100%;
+}
+
+.filledbar {
+  position: absolute;
+  top: 0px;
+  z-index: 3;
+  width: 0px;
+  height: 100%;
+  background: rgb(0, 154, 217);
+  background: linear-gradient(90deg, rgba(0, 154, 217, 1) 0%, rgba(217, 147, 0, 1) 65%, rgba(255, 186, 0, 1) 100%);
+  transition: width 0.6s ease-out;
+}
+
+.card:hover .filledbar {
+  width: 120px;
+}
+
+/* Разделитель */
+/* Стиль для рекламных блоков */
+.ads-container {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.ad-block {
+  margin: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  width: 300px;
+}
+
+.ad-block img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Стиль для разделителя */
+.divider {
+  position: relative;
+  height: 40px;
+  overflow: hidden;
+}
+
+.hr-brush-stroke {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  background-image: url('/assets/smbrush.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+/* Каталог игр */
+.game-catalog {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+  justify-content: center;
+  background: #2c2c2c;
+}
+
+.game-card {
+  background: #1e1e1e;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 300px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.game-card:hover {
+  transform: scale(1.05);
+}
+
+.game-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.game-card h3 {
+  color: white;
+  margin: 15px 0;
+}
+
+.game-card p {
+  color: #ccc;
+  padding: 0 15px;
+}
+
+.game-button {
+  display: flex; /* Используем Flexbox для центрирования */
+  align-items: center; /* Центрируем по вертикали */
+  justify-content: center; /* Центрируем по горизонтали */
+  padding: 12px 24px; /* Внутренние отступы */
+  font-size: 14px;
+  color: white;
+  text-decoration: none;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  writing-mode: horizontal-tb; /* Горизонтальный текст */
+  white-space: normal; /* Разрешаем перенос текста */
+  min-width: 120px; /* Минимальная ширина для кнопок */
+  height: 48px; /* Фиксированная высота для кнопок */
+}
+
+.game-button:focus,
+.game-button:active {
+  outline: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  transform: scale(0.98);
+}
+
+/* Стиль для кнопки "Купить" */
+.buy-button {
+  background-color: #28a745; /* Зеленый цвет */
+}
+
+.buy-button:hover {
+  background-color: #218838; /* Темно-зеленый при наведении */
+}
+
+/* Стиль для кнопки "Играть" */
+.play-button {
+  background-color: #007bff; /* Синий цвет */
+}
+.play-button:hover {
+  background-color: #0056b3; /* Темно-синий при наведении */
+}
+
+/* Стиль для кнопки "Чат" */
+.chat-button {
+  background-color: #ffc107; /* Желтый цвет */
+  color: black; /* Текст черного цвета */
+}
+
+.chat-button:hover {
+  background-color: #e0a800; /* Темно-желтый при наведении */
+}
+
+/* Блок для размещения кнопок */
+.buttons {
+  display: flex; /* Используем Flexbox */
+  flex-wrap: wrap; /* Разрешаем перенос на новую строку */
+  justify-content: center; /* Выравниваем кнопки по центру */
+  gap: 10px; /* Добавляем отступ между кнопками */
+  margin-top: 10px; /* Отступ сверху для кнопок */
+}
+
+.buttons .game-button {
+  flex: 1 1 calc(50% - 10px); /* Каждая кнопка занимает половину строки с учетом отступов */
+  max-width: calc(50% - 10px); /* Максимальная ширина для кнопок */
+  text-align: center; /* Центрируем текст внутри кнопок */
+  white-space: normal; /* Разрешаем перенос текста */
+}
+
+.delete-button {
+  display: inline-block; /* Убедитесь, что кнопка видима */
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 14px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.delete-button:hover {
+  background-color: darkred;
+}
+
+/* Слайдер */
+#slider {
+  width: 100%;
+  height: 500px;
+  position: relative;
+  overflow: hidden;
+}
+
+@keyframes load {
+  from {
+    left: -100%;
+  }
+  to {
+    left: 0;
+  }
+}
+
+.slides {
+  width: 400%;
+  height: 100%;
+  position: relative;
+  animation: slide 30s infinite;
+}
+
+.slider {
+  width: 25%;
+  height: 100%;
+  float: left;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+}
+
+.image img {
+  width: 100%;
+  height: auto;
+}
+
+/* Легенда */
+.legend {
+  border: 500px solid transparent;
+  border-left: 800px solid rgba(52, 73, 94, 0.7);
+  border-bottom: 0;
+  position: absolute;
+  bottom: 0;
+}
+
+/* Содержимое */
+.content {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  overflow: hidden;
+}
+
+.content-txt {
+  width: 400px;
+  height: 150px;
+  float: left;
+  position: relative;
+  top: 300px;
+  animation: content-s 7.5s infinite;
+}
+
+.content-txt h1 {
+  font-family: Arial;
+  text-transform: uppercase;
+  font-size: 24px;
+  color: #fff;
+  text-align: left;
+  margin-left: 30px;
+  padding-bottom: 10px;
+}
+
+.content-txt h2 {
+  font-family: Arial;
+  font-weight: normal;
+  font-size: 14px;
+  font-style: italic;
+  color: #fff;
+  text-align: left;
+  margin-left: 30px;
+}
+
+/* Переключатель */
+.switch {
+  width: 120px;
+  height: 10px;
+  position: absolute;
+  bottom: 50px;
+  z-index: 99;
+  left: 30px;
+}
+
+.switch > ul {
+  list-style: none;
+}
+
+.switch > ul > li {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #333;
+  float: left;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.switch ul {
+  overflow: hidden;
+}
+
+.on {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: #f39c12;
+  position: relative;
+  animation: on 30s infinite;
+}
+
+/* Анимации */
+@keyframes slide {
+  0%, 100% {
+    margin-left: 0%;
+  }
+  21% {
+    margin-left: 0%;
+  }
+  25% {
+    margin-left: -100%;
+  }
+  46% {
+    margin-left: -100%;
+  }
+  50% {
+    margin-left: -200%;
+  }
+  71% {
+    margin-left: -200%;
+  }
+  75% {
+    margin-left: -300%;
+  }
+  96% {
+    margin-left: -300%;
+  }
+}
+
+@keyframes content-s {
+  0% {
+    left: -420px;
+  }
+  10% {
+    left: 20px;
+  }
+  15% {
+    left: 0px;
+  }
+  30% {
+    left: 0px;
+  }
+  40% {
+    left: 0px;
+  }
+  50% {
+    left: 0px;
+  }
+  60% {
+    left: 0px;
+  }
+  70% {
+    left: 0;
+  }
+  80% {
+    left: -420px;
+  }
+  90% {
+    left: -420px;
+  }
+  100% {
+    left: -420px;
+  }
+}
+
+@keyframes on {
+  0%, 100% {
+    margin-left: 0%;
+  }
+  21% {
+    margin-left: 0%;
+  }
+  25% {
+    margin-left: 15px;
+  }
+  46% {
+    margin-left: 15px;
+  }
+  50% {
+    margin-left: 30px;
+  }
+  71% {
+    margin-left: 30px;
+  }
+  75% {
+    margin-left: 45px;
+  }
+  96% {
+    margin-left: 45px;
+  }
+}
+
+.disabled-button {
+  background-color: #ccc; /* Серый цвет */
+  color: #666; /* Темно-серый текст */
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: not-allowed; /* Запрещает нажатие */
+  text-align: center;
+}
+
+.game-button.chat-button {
+  background-color: #d47500; /* Синий цвет */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.game-button.chat-button:hover {
+  background-color: #8a4c00; /* Темно-синий при наведении */
+}

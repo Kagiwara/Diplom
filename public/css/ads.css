@@ -1,0 +1,81 @@
+body {
+    font-family: Arial, sans-serif;
+  }
+
+.centered-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 90vh;
+    background: #1e1e1e;
+    padding: 20px;
+    background-image: url(https://i.yapx.ru/YZuuy.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 600px;
+}
+
+/* Контейнер формы */
+.ads-management-container {
+    background: #2c2c2c;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+}
+
+/* Заголовок */
+h1 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #3fb6d7;
+}
+
+/* Группа полей ввода */
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #3fb6d7;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    resize: vertical;
+}
+
+/* Кнопка */
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Текущее изображение */
+.current-image {
+    color: #3fb6d7;
+    font-size: 14px;
+    margin-top: 5px;
+}

@@ -1,0 +1,117 @@
+/* Общие стили */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f1f1f1;
+}
+
+h1 {
+    font-weight: bold;
+    background: linear-gradient(to right, #c50093, #ff00c5);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Контейнер для списка форумов или тем */
+.forum-list-container,
+.forum-topics-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-image: url(/public/assets/forum.png);
+    background: url('https://i.postimg.cc/4ysdgdmk/forum.png') no-repeat center center fixed;
+    background-size: cover;
+    height: 668px;
+    max-height: 668px;
+    overflow-y: auto;
+    color: white;
+}
+
+/* Стили для полосы прокрутки */
+.forum-list-container::-webkit-scrollbar,
+.forum-topics-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.forum-list-container::-webkit-scrollbar-thumb,
+.forum-topics-container::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 4px;
+}
+
+.forum-list-container::-webkit-scrollbar-thumb:hover,
+.forum-topics-container::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+}
+
+/* Стиль для каждого элемента (форума или темы) */
+.forum-item,
+.topic-item {
+    background: rgba(30, 30, 30, 0.8);
+    border-radius: 15px;
+    padding: 20px;
+    width: 100%;
+    max-width: 600px;
+    margin: 15px 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.forum-item:hover,
+.topic-item:hover {
+    transform: scale(1.05);
+}
+
+/* Стиль для кнопок */
+.view-forum-button,
+.view-topic-button,
+.create-topic-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.view-forum-button:hover,
+.view-topic-button:hover,
+.create-topic-button:hover {
+    background-color: #0056b3;
+}
+
+.delete-topic-button {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-left: 10px;
+}
+
+.delete-topic-button:hover {
+    background-color: darkred;
+}
+
+.delete-forum-button {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-left: 10px;
+}
+
+.delete-forum-button:hover {
+    background-color: darkred;
+}

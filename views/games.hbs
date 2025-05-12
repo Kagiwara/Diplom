@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Shop</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300i,400" rel="stylesheet">
+    <link rel="stylesheet" href="css/style2.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/">
+            <img src="/assets/export-icon.png" width="45px" height="45px" alt="GShop">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <!-- Общедоступные ссылки -->
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/games">Каталог</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/chat-list">Форум</a>
+                </li>
+
+                <!-- Ссылки для администраторов -->
+                {{#if session.user.isAdmin}}
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="adminDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Админ-панель
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="adminDropdown">
+                        <li><a class="nav-item dropdown-item" href="/admin/users">Управление пользователями</a></li>
+                        <li><a class="dropdown-item" href="/admin/slider">Управление слайдером</a></li>
+                        <li><a class="dropdown-item" href="/admin/wither">Управление промо</a></li>
+                        <li><a class="dropdown-item" href="/admin/adminred">Редактирование игр</a></li>
+                        <li><a class="dropdown-item" href="/admin/admingame">Создание игры</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="nav-item dropdown-item" href="/admin/ads">Реклама</a></li>
+                    </ul>
+                </li>
+                {{/if}}
+
+                <!-- Блок "Профиль" для залогиненных пользователей -->
+                {{#if session.user}}
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Привет, {{session.user.username}}
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="profileDropdown">
+                        <li><a class="dropdown-item" href="/profile">Мой профиль</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="/logout">Выйти</a></li>
+                    </ul>
+                </li>
+                {{else}}
+                <!-- Блок "Регистрация / Вход" для не залогиненных пользователей -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="authDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Профиль
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="authDropdown">
+                        <li><a class="dropdown-item" href="/registration">Регистрация</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="/login">Войти</a></li>
+                    </ul>
+                </li>
+                {{/if}}
+
+                <!-- Поиск -->
+                <form class="d-flex ms-auto" id="search-form">
+                  <input 
+                      class="form-control me-2" 
+                      type="search" 
+                      placeholder="Поиск по названию" 
+                      aria-label="Search" 
+                      id="search-input"
+                  >
+                  <button class="btn btn-outline-success" type="button" id="search-button">Найти</button>
+              </form>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+ {{!---------------------------------}}
+    <div id="slider">
+    <div class="slides">
+        {{#each sliders}}
+        <div class="slider">
+            <div class="legend"></div>
+            <div class="content">
+                <div class="content-txt">
+                    <h1>{{title}}</h1>
+                    <h2>{{description}}</h2>
+                </div>
+            </div>
+            <div class="image">
+                <img src="{{image}}" alt="{{title}}">
+            </div>
+        </div>
+        {{/each}}
+    </div>
+    <div class="switch">
+        <ul>
+            {{#each sliders}}
+            <li>
+                <div class="on"></div>
+            </li>
+            {{else}}
+            <li></li>
+            {{/each}}
+        </ul>
+    </div>
+</div>
+  {{!---------------------------------}}
+
+  <div class="divider">
+    <div class="hr-brush-stroke"></div>
+  </div>
+
+  {{!--  --}}
+  <div class="wither">
+    <div class="container" style="margin-top: 20px; top: 600px;">
+        {{#each withers}}
+        <div class="card">
+            <h3 class="title" style="color: crimson;">{{title}}</h3>
+            <img src="{{image}}" alt="{{title}}" style="width:100%; height:auto;">
+            <div class="bar">
+                <div class="emptybar"></div>
+                <div class="filledbar"></div>
+            </div>
+            <div class="buttons">
+                <a href="{{buyUrl}}" class="game-button buy-button">Купить</a>
+            </div>
+            <p style="color: crimson;"><small>{{description}}</small></p>
+        </div>
+        {{/each}}
+    </div>
+</div>
+{{!-- ---------------------------------------------------------------------------------- --}}
+
+  <div class="divider">
+    <div class="hr-brush-stroke"></div>
+  </div>
+
+  <!-- Демонстрационный каталог игр -->
+  <div class="game-catalog">
+  {{#each games}}
+    <div class="game-card">
+      <img src="{{img}}" alt="{{title}}">
+      <h3>{{title}}</h3>
+      <p>{{description}}</p>
+      <div class="buttons">
+        <!-- Кнопка Форум -->
+        {{#if this.forumId}}
+          <a href="/forum/{{this.forumId}}" class="game-button chat-button">Форум</a>
+        {{else}}
+          <span class="game-button disabled-button">Форум недоступен</span>
+        {{/if}}
+        <!-- Кнопка Играть -->
+        <a href="{{playUrl}}" class="game-button play-button" target="_blank">Подробнее</a>
+        <!-- Кнопка Редактировать (только для администраторов) -->
+        {{#if ../session.user.isAdmin}}
+          <a href="/adminred/{{_id}}" class="game-button buy-button">Редактировать</a>
+        {{/if}}
+        <!-- Кнопка Удалить (только для администраторов) -->
+        {{#if ../session.user.isAdmin}}
+          <a href="#" class="game-button delete-button" onclick="deleteGame('{{_id}}')">Удалить</a>
+        {{/if}}
+      </div>
+    </div>
+  {{else}}
+    <p>Нет доступных игр.</p>
+  {{/each}}
+</div>
+
+<script>
+  function deleteGame(gameId) {
+    if (confirm('Вы уверены, что хотите удалить игру?')) {
+      fetch(`/admin/delete-game/${gameId}`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ id: gameId })
+      })
+      .then(response => {
+        if (response.ok) {
+          alert('Игра успешно удалена');
+          window.location.reload();
+        } else {
+          alert('Ошибка при удалении игры');
+        }
+      })
+      .catch(error => {
+        console.error('Ошибка при отправке запроса:', error);
+        alert('Произошла ошибка при удалении игры');
+      });
+    }
+  }
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const searchInput = document.getElementById('search-input');
+    const gameCards = document.querySelectorAll('.game-card');
+
+    // Функция для фильтрации игр
+    function filterGames() {
+        const query = searchInput.value.toLowerCase().trim(); // Получаем текст из поля поиска
+
+        gameCards.forEach(card => {
+            const title = card.querySelector('h3').textContent.toLowerCase(); // Получаем название игры
+
+            if (title.includes(query)) {
+                card.style.display = 'block'; // Показываем игру, если она соответствует запросу
+            } else {
+                card.style.display = 'none'; // Скрываем игру, если не соответствует запросу
+            }
+        });
+    }
+
+    // Обработка события ввода текста
+    searchInput.addEventListener('input', filterGames);
+
+    // Обработка клика на кнопке "Найти"
+    document.getElementById('search-button').addEventListener('click', () => {
+        filterGames();
+    });
+});
+</script>
+</body>
+</html>

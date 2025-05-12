@@ -1,0 +1,117 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.navbar{
+    justify-content: space-between;
+    width: 100%;
+}
+
+.bg{
+  background-image: url(https://i.postimg.cc/mDxkmV4r/regbg.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 600px;
+}
+
+.registration-container {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  text-align: center;
+  margin-top: 20px; 
+}
+
+h1 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #333;
+}
+
+.form-group {
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  color: #555;
+}
+
+input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #218838;
+}
+
+p {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #555;
+}
+
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+  /* Стили для кнопки "Купить" */
+  .buy-button {
+    display: inline-block; /* Делаем элемент блочным */
+    padding: 10px 20px; /* Отступы для кнопки */
+    background-color: #28a745; /* Зеленый фон */
+    color: white; /* Белый текст */
+    font-size: 16px; /* Размер шрифта */
+    text-align: center; /* Центрируем текст внутри кнопки */
+    text-decoration: none; /* Убираем подчеркивание ссылки */
+    border: none; /* Убираем границу */
+    border-radius: 5px; /* Закругляем углы */
+    cursor: pointer; /* Изменяем курсор на указатель */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Добавляем плавные переходы */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Добавляем тень */
+  }
+  
+  /* При наведении на кнопку */
+  .buy-button:hover {
+    background-color: #218838; /* Темно-зеленый фон при наведении */
+    transform: scale(1.05); /* Немного увеличиваем размер кнопки */
+  }
+  
+  /* При фокусе или активации кнопки */
+  .buy-button:focus,
+  .buy-button:active {
+    outline: none; /* Убираем контур фокуса */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Изменяем тень при нажатии */
+    transform: scale(0.98); /* Немного уменьшаем размер при нажатии */
+  }

@@ -1,9 +1,8 @@
 # Platform for popularization games
 
 <div align="center">
-  <img src="https://vk.com/kagiwara " alt="Profile Summary" />
-  <img src="https://github.com/your-username/your-username/blob/main/profile-summary-card-output/cobalt/1-repos-per-language.svg " alt="Repos per Language" />
-  <img src="https://github.com/your-username/your-username/blob/main/profile-summary-card-output/cobalt/2-most-commit-language.svg " alt="Most Commit Language" />
+  <img src="https://vk.com/kagiwara" alt="VK" />
+  <img src="https://github.com/Kagiwara" alt="Git" />
 </div>
 
 # Beautify GitHub Profile

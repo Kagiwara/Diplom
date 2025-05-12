@@ -1,8 +1,14 @@
 # Welcome to my repository
-<img src="https://i.pinimg.com/736x/fc/9c/1d/fc9c1d9b57df7d9542b1dccae523405b.jpg" alt="Your Avatar" width="1000" height="600" />
+<img src="https://i.pinimg.com/736x/fc/9c/1d/fc9c1d9b57df7d9542b1dccae523405b.jpg" alt="Your Avatar" width="1000" height="500" />
 <div align="center">
-  <img src="https://vk.com/kagiwara" alt="WELCOME" />
-  <img src="https://github.com/Kagiwara" alt="Git" />
+  <a href="https://vk.com/kagiwara ">
+    <img src="https://vk.com/images/icons/community/200x200.png " alt="VK Profile" width="100" height="100" />
+    <p>VK</p>
+  </a>
+  <a href="https://github.com/Kagiwara ">
+    <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png " alt="GitHub Profile" width="100" height="100" />
+    <p>Git</p>
+  </a>
 </div>
 
 # Platform for popularization games

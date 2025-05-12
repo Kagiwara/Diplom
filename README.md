@@ -1,5 +1,5 @@
 # Platform for popularization games
-<img src="https://i.pinimg.com/736x/28/ee/21/28ee21d0749761114a922ac9b3c54e90.jpg" alt="Your Avatar" width="100" height="100" />
+<img src="https://i.pinimg.com/736x/28/ee/21/28ee21d0749761114a922ac9b3c54e90.jpg" alt="Your Avatar" width="1000" height="300" />
 <div align="center">
   <img src="https://vk.com/kagiwara" alt="WELCOME" />
   <img src="[https://github.com/Kagiwara](https://i.pinimg.com/736x/28/ee/21/28ee21d0749761114a922ac9b3c54e90.jpg)" alt="Git" />

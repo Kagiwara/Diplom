@@ -2,11 +2,9 @@
 <img src="https://i.pinimg.com/736x/fc/9c/1d/fc9c1d9b57df7d9542b1dccae523405b.jpg" alt="Your Avatar" width="1000" height="500" />
 <div align="center">
   <a href="https://vk.com/kagiwara ">
-    <img src=" https://sun1-86.userapi.com/s/v1/ig2/gI2eqztr7ivI4AqHtzT0yU44_FLkXIT--MYlebwIJSjkc8k5Sg9VRU0AZkdT0Eah7FYxDWgkt9d6Ka_4hIttO4WB.jpg?quality=96&crop=51,51,409,409&as=32x32,48x48,72x72,108x108,160x160,240x240,360x360&ava=1&cs=240x240 " alt="VK Profile" width="240" height="240" />
     <p>VK</p>
   </a>
   <a href="https://github.com/Kagiwara ">
-    <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png " alt="GitHub Profile" width="100" height="100" />
     <p>Git</p>
   </a>
 </div>

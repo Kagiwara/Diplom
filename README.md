@@ -1,8 +1,8 @@
 # Platform for popularization games
 
 <div align="center">
-  <img src="https://vk.com/kagiwara" alt="VK" />
-  <img src="https://github.com/Kagiwara" alt="Git" />
+  <a src="https://vk.com/kagiwara" alt="VK" />
+  <a src="https://github.com/Kagiwara" alt="Git" />
 </div>
 
 # Beautify GitHub Profile
